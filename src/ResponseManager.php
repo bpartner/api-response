@@ -121,7 +121,7 @@ final class ResponseManager
         }
 
         return $this->response(
-            $payload,
+            [],
             $status,
             $meta,
             $headers,
@@ -228,8 +228,8 @@ final class ResponseManager
      * @return array|JsonSerializable|Arrayable|null
      */
     private function toArray(
-        string|array|JsonSerializable|Arrayable|null $payload,
-    ): array|JsonSerializable|Arrayable|null {
+        mixed $payload,
+    ): mixed {
         if (is_string($payload)) {
             $payload = [self::$wrapper ?? config('api-response.string_field_wrapper') => $payload];
         }
