@@ -19,5 +19,7 @@ php artisan vendor:publish --tag=api-response-config
 ```php
 return API::success($data);
 return API::error();
-return API::notFound()
+return API::notFound();
+return API::ok();
 ```
+

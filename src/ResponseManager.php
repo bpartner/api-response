@@ -121,7 +121,7 @@ final class ResponseManager
         }
 
         return $this->response(
-            [],
+            $payload,
             $status,
             $meta,
             $headers,
