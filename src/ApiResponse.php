@@ -8,7 +8,7 @@ use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
-final class ApiResponse implements Responsable
+class ApiResponse implements Responsable
 {
     private mixed $data = null;
     private array $headers = [];

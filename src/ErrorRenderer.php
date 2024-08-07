@@ -8,7 +8,7 @@ use Illuminate\Contracts\Support\Responsable;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 
-final class ErrorRenderer
+class ErrorRenderer
 {
     public static function resolve(Throwable $e): Responsable
     {

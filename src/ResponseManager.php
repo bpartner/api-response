@@ -14,7 +14,7 @@ use Illuminate\Validation\ValidationException;
 use JsonSerializable;
 use Symfony\Component\HttpFoundation\Response;
 
-final class ResponseManager
+class ResponseManager
 {
     private static ?string $wrapper = 'data';
     private static string $paginate = 'paginate';
@@ -230,19 +230,15 @@ final class ResponseManager
     private function toArray(
         mixed $payload,
     ): mixed {
-        if (is_string($payload)) {
-            $payload = [self::$wrapper ?? config('api-response.string_field_wrapper') => $payload];
-        }
-
         if ($payload instanceof Arrayable) {
-            return $payload->toArray();
+            return [self::$wrapper ?? config('api-response.string_field_wrapper') => $payload->toArray()];
         }
 
         if ($payload instanceof JsonSerializable) {
-            return $payload->jsonSerialize();
+            return [self::$wrapper ?? config('api-response.string_field_wrapper') => $payload->jsonSerialize()];
         }
 
-        return $payload;
+        return [self::$wrapper ?? config('api-response.string_field_wrapper') => $payload];
     }
 
     /**

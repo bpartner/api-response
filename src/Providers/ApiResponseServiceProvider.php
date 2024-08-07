@@ -8,7 +8,7 @@ use Bpartner\ApiResponse\ResponseManager;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
-final class ApiResponseServiceProvider extends ServiceProvider
+class ApiResponseServiceProvider extends ServiceProvider
 {
     public function register(): void
     {

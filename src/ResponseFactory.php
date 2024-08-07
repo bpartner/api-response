@@ -7,7 +7,7 @@ namespace Bpartner\ApiResponse;
 use Illuminate\Contracts\Support\Responsable;
 use Symfony\Component\HttpFoundation\Response;
 
-final class ResponseFactory
+class ResponseFactory
 {
     public function __construct(protected ResponseManager $builder) {}
 
